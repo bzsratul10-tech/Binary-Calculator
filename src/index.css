@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    background-color: var(--bg-page, #f8fafc);
+    color: var(--text-primary, #0f172a);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Light Theme */
+.theme-light {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f1f5f9;
+  --border-card: #e2e8f0;
+  --border-subtle: #edf2f7;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #eff6ff;
+  --accent-border: #bfdbfe;
+  --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Dark Theme */
+.theme-dark {
+  --bg-page: #0b0f19;
+  --bg-card: #131b2e;
+  --bg-card-subtle: #1a233b;
+  --border-card: #1e293b;
+  --border-subtle: #25334d;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-primary: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-light: rgba(59, 130, 246, 0.12);
+  --accent-border: rgba(59, 130, 246, 0.3);
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 4px 10px -2px rgba(0, 0, 0, 0.3);
+  background-color: #0b0f19;
+  color: #f8fafc;
+}
+
+/* Web Mode: Original Red, Black, White Superhero Theme with CSS geometric web line styling */
+.theme-web {
+  --bg-page: #090a0f;
+  --bg-card: #11131a;
+  --bg-card-subtle: #181b24;
+  --border-card: #37171d;
+  --border-subtle: #4c1d24;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-primary: #dc2626;
+  --accent-hover: #b91c1c;
+  --accent-light: rgba(220, 38, 38, 0.16);
+  --accent-border: rgba(220, 38, 38, 0.45);
+  --card-shadow: 0 10px 30px -5px rgba(220, 38, 38, 0.15), 0 0 1px 1px rgba(220, 38, 38, 0.25);
+  background-color: #090a0f;
+  color: #ffffff;
+}
+
+/* Geometric web-line background pattern for Web Mode */
+.theme-web-bg {
+  background-color: #090a0f;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+    /* Concentric web rings */
+    radial-gradient(circle at 50% 120px, transparent 40px, rgba(220, 38, 38, 0.04) 41px, transparent 43px),
+    radial-gradient(circle at 50% 120px, transparent 90px, rgba(220, 38, 38, 0.04) 91px, transparent 93px),
+    radial-gradient(circle at 50% 120px, transparent 150px, rgba(220, 38, 38, 0.04) 151px, transparent 153px),
+    radial-gradient(circle at 50% 120px, transparent 220px, rgba(220, 38, 38, 0.035) 221px, transparent 223px),
+    radial-gradient(circle at 50% 120px, transparent 300px, rgba(220, 38, 38, 0.03) 301px, transparent 303px),
+    radial-gradient(circle at 50% 120px, transparent 390px, rgba(220, 38, 38, 0.025) 391px, transparent 393px),
+    /* Radial spoke web lines */
+    linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(0deg, rgba(220, 38, 38, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 38, 38, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px, 40px 40px, 40px 40px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}

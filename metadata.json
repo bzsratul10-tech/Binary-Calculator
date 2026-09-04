@@ -1,0 +1,6 @@
+{
+  "name": "Number System Converter",
+  "description": "A universal educational number system converter for students supporting Binary, Octal, Decimal, and Hexadecimal with step-by-step solutions and multiple themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
